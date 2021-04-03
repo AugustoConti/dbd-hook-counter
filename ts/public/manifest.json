@@ -1,0 +1,143 @@
+{
+  "manifest_version": 1,
+  "type": "WebApp",
+  "meta": {
+    "name": "Sample App",
+    "author": "Overwolf",
+    "version": "3.0.0",
+    "minimum-overwolf-version": "0.120.0",
+    "description": "An example app for developers new to Overwolf",
+    "dock_button_title": "Sample - TS",
+    "icon": "icons/iconMouseOver.png",
+    "icon_gray": "icons/iconMouseNormal.png",
+    "launcher_icon": "icons/icon.ico",
+    "window_icon": "icons/windowIcon.png"
+  },
+  "permissions": ["Hotkeys", "GameInfo"],
+  "data": {
+    "start_window": "background",
+    "windows": {
+      "background": {
+        "file": "background.html",
+        "is_background_page": true
+      },
+      "desktop": {
+        "file": "desktop.html",
+        "desktop_only": true,
+        "native_window": true,
+        "resizable": true,
+        "transparent": true,
+        "override_on_update": true,
+        "size": {
+          "width": 1212,
+          "height": 699
+        },
+        "min_size": {
+          "width": 1212,
+          "height": 699
+        }
+      },
+      "in_game": {
+        "file": "in_game.html",
+        "in_game_only": true,
+        "focus_game_takeover": "ReleaseOnHidden",
+        "focus_game_takeover_release_hotkey": "showhide",
+        "resizable": false,
+        "transparent": true,
+        "override_on_update": true,
+        "size": {
+          "width": 200,
+          "height": 400
+        },
+        "min_size": {
+          "width": 200,
+          "height": 400
+        }
+      }
+    },
+    "game_targeting": {
+      "type": "dedicated",
+      "game_ids": [10868]
+    },
+    "game_events": [10868],
+    "launch_events": [
+      {
+        "event": "GameLaunch",
+        "event_data": {
+          "game_ids": [10868]
+        },
+        "start_minimized": false
+      }
+    ],
+    "hotkeys": {
+      "showhide": {
+        "title": "Show/Hide In-Game Window",
+        "action-type": "toggle",
+        "default": "Ctrl+F"
+      },
+      "hook_1": {
+        "title": "Hook player 1",
+        "action-type": "custom",
+        "default": "1"
+      },
+      "unhook_1": {
+        "title": "Unhook player 1",
+        "action-type": "custom",
+        "default": "Alt+1"
+      },
+      "hook_2": {
+        "title": "Hook player 2",
+        "action-type": "custom",
+        "default": "2"
+      },
+      "unhook_2": {
+        "title": "Unhook player 2",
+        "action-type": "custom",
+        "default": "Alt+2"
+      },
+      "hook_3": {
+        "title": "Hook player 3",
+        "action-type": "custom",
+        "default": "3"
+      },
+      "unhook_3": {
+        "title": "Unhook player 3",
+        "action-type": "custom",
+        "default": "Alt+3"
+      },
+      "hook_4": {
+        "title": "Hook player 4",
+        "action-type": "custom",
+        "default": "4"
+      },
+      "unhook_4": {
+        "title": "Unhook player 4",
+        "action-type": "custom",
+        "default": "Alt+4"
+      }
+    },
+    "protocol_override_domains": {
+      "googlesyndication": "http"
+    },
+    "externally_connectable": {
+      "matches": [
+        "http://*.overwolf.com",
+        "https://*.overwolf.com",
+        "https://overwolf.github.io",
+        "https://*.google-analytics.com",
+        "http://*.google-analytics.com",
+        "https://www.googleapis.com",
+        "https://discord.gg/v5cfBTq",
+        "https://twitter.com/",
+        "https://www.facebook.com",
+        "https://www.reddit.com"
+      ]
+    },
+    "force_browser": "user",
+    "developer": {
+      "enable_auto_refresh": true,
+      "reload_delay": 1000,
+      "filter": "*.*"
+    }
+  }
+}
